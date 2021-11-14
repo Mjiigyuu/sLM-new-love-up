@@ -23,10 +23,10 @@ def countNode(update, context):
         else:
             uname = f'<a href="tg://user?id={update.message.from_user.id}">{update.message.from_user.first_name}</a>'
         if uname is not None:
-            cc = f'\n\ncc: {uname}'
+            cc = f'\n\nCount BY 👉 :👸: {uname}'
         sendMessage(result + cc, context.bot, update)
     else:
-        sendMessage("Provide G-Drive Shareable Link to Count.", context.bot, update)
+        sendMessage("Provide G-Drive Shareable Link to Count.💃💃", context.bot, update)
 
 count_handler = CommandHandler(BotCommands.CountCommand, countNode, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
 dispatcher.add_handler(count_handler)
