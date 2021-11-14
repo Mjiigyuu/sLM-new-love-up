@@ -21,15 +21,15 @@ PAGE_NO = 1
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "⭐ Uploading...📤 ⏫"
-    STATUS_DOWNLOADING = " 🌟 Downloading...📥 ⏬"
-    STATUS_CLONING = " 🤶Cloning...♻️"
-    STATUS_WAITING = " 😡 Queued...📝"
-    STATUS_FAILED = " 🧐 Failed 🚫. Cleaning Download..."
-    STATUS_PAUSE = " 🤷‍♀️ Paused...⏸"
-    STATUS_ARCHIVING = " 💝 Archiving...🔐"
-    STATUS_EXTRACTING = " 💔 Extracting...📂"
-    STATUS_SPLITTING = " 💞 Splitting...✂️"
+    STATUS_UPLOADING = " ⭐ Uploading...📤 ⏫ "
+    STATUS_DOWNLOADING = " 🌟 Downloading...📥 ⏬ "
+    STATUS_CLONING = " 🤶 Cloning...♻️ "
+    STATUS_WAITING = " 😡 Queued...📝 "
+    STATUS_FAILED = " 🧐 Failed 🚫.. Cleaning Download..."
+    STATUS_PAUSE = " 🤷‍♀️ Paused...⏸ "
+    STATUS_ARCHIVING = " 💝 Archiving...🔐 "
+    STATUS_EXTRACTING = " 💔 Extracting...📂 "
+    STATUS_SPLITTING = " 💞 Splitting...✂️ "
 
 
 PROGRESS_MAX_SIZE = 100 // 8
@@ -128,7 +128,7 @@ def get_readable_message():
                 globals()['PAGE_NO'] -= 1
             start = COUNT
         for index, download in enumerate(list(download_dict.values())[start:], start=1):
-            msg += f"<b>📂 Filename:</b> <code>{download.name()}</code>"
+            msg += f"<b> 🗃 Filename: </b> <code>{download.name()}</code>"
             msg += f"\n<b> 🔥Status:</b> <i>{download.status()}</i>"
             if download.status() not in [
                 MirrorStatus.STATUS_ARCHIVING,
@@ -139,13 +139,13 @@ def get_readable_message():
                 if download.status() == MirrorStatus.STATUS_CLONING:
                     msg += f"\n<b>Cloned:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                    msg += f"\n<b>Uploaded 💃:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                    msg += f"\n<b> Uploaded 💃: </b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
                 else:
-                    msg += f"\n<b>Downloaded 💃:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
-                msg += f"\n<b>Speed ⚡:</b> <code>{download.speed()}</code> <b>ETA:</b> <code>{download.eta()}</code>"
+                    msg += f"\n<b> Downloaded 💃:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                msg += f"\n<b> Speed ⚡: </b> <code>{download.speed()}</code> <b>ETA:</b> <code>{download.eta()}</code>"
                 try:
-                    msg += f"\n<b>INFO ⚓️ :-Seeders 🌹:</b> <code>{download.aria_download().num_seeders}</code>" \
-                           f" | <b>Peers 🥀:</b> <code>{download.aria_download().connections}</code>"
+                    msg += f"\n<b> INFO ⚓️ :- Seeders 🌹:</b> <code>{download.aria_download().num_seeders}</code>" \
+                           f" | <b> Peers 🥀: </b> <code>{download.aria_download().connections}</code>"
                 except:
                     pass
                 try:
@@ -153,7 +153,7 @@ def get_readable_message():
                            f" | <b>Leechers:</b> <code>{download.torrent_info().num_leechs}</code>"
                 except:
                     pass
-                msg += f"\n<b>To Cancel 👉🤦‍♀️:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n<b> To Cancel 👉 🤦‍♀️ : </b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
