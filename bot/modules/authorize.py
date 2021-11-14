@@ -14,7 +14,7 @@ def authorize(update, context):
     if len(message_) == 2:
         user_id = int(message_[1])
         if user_id in AUTHORIZED_CHATS:
-            msg = 'User Already Authorized'
+            msg = 'User Already Authorized 💃💃'
         elif DB_URI is not None:
             msg = DbManger().db_auth(user_id)
         else:
