@@ -59,6 +59,9 @@ def direct_link_generator(link: str):
         return fembed(link)
     elif 'asianclub.tv' in link:
         return fembed(link)
+    elif 'https://mycloudzz.com' in link:
+
+        return fembed(link)
     elif 'gaobook.review' in link:
         return fembed(link)
     elif 'smartshare.tv' in link:
