@@ -11,8 +11,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN chmod +x gdrive
 COPY /usr/src/app/gdrive
 
-COPY /usr/local/bin/gdrive
-RUN - pip install gdrive
+
+
 
 
 # add mkvtoolnix
