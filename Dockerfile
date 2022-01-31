@@ -6,15 +6,6 @@ RUN chmod 777 /usr/src/app
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-# add gdrive
-
-RUN chmod +x gdrive
-COPY /usr/src/app/gdrive
-
-
-
-
-
 # add mkvtoolnix
 
 RUN wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | apt-key add - && \
