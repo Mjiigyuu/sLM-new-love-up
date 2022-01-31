@@ -13,7 +13,7 @@ COPY /usr/src/app/gdrive
 
 COPY /usr/local/bin/gdrive
 RUN - pip install gdrive
-COPY /usr/src/app/gdrive
+
 
 # add mkvtoolnix
 
