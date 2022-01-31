@@ -1,4 +1,4 @@
-FROM anasty17/mltb:latest
+FROM breakdowns/mega-sdk-python:latest
 # FROM anasty17/mltb-oracle:latest
 
 WORKDIR /usr/src/app
