@@ -33,7 +33,7 @@ def cancel_mirror(update, context):
             if BotCommands.MirrorCommand in mirror_message.text or \
                BotCommands.TarMirrorCommand in mirror_message.text or \
                BotCommands.UnzipMirrorCommand in mirror_message.text:
-                msg1 = "Mirror Already Have Been Cancelled 🥳"
+                msg1 = "Idiot..🤦‍♀️ Mirror Already Have Been Cancelled 🥳"
                 sendMessage(msg1, context.bot, update)
             else:
                 sendMessage(msg, context.bot, update)
@@ -42,11 +42,11 @@ def cancel_mirror(update, context):
             sendMessage(msg, context.bot, update)
             return
     if dl.status() == MirrorStatus.STATUS_ARCHIVING:
-        sendMessage("Archival in Progress, You Can't Cancel It.", context.bot, update)
+        sendMessage("💃 Archival in Progress, 🥳 You Can't Cancel It 🌼.", context.bot, update)
     elif dl.status() == MirrorStatus.STATUS_EXTRACTING:
-        sendMessage("Extract in Progress, You Can't Cancel It.", context.bot, update)
+        sendMessage("✨ Extract in Progress, 🐦 You Can't Cancel It 🤩.", context.bot, update)
     elif dl.status() == MirrorStatus.STATUS_SPLITTING:
-        sendMessage("Split in Progress, You Can't Cancel It.", context.bot, update)
+        sendMessage("💔 Split in Progress, ⛄ You Can't Cancel It 🤦‍♀️.", context.bot, update)
     else:
         dl.download().cancel_download()
         sleep(3)  # incase of any error with ondownloaderror listener
@@ -66,7 +66,7 @@ def cancel_all(update, context):
                 sleep(0.3)
         else:
             break
-    sendMessage(f'{count} Download(s) has been Cancelled..🤪!', context.bot, update)
+    sendMessage(f'{count} Download(s) has been 💃 Cancelled..🤪!', context.bot, update)
 
 
 
