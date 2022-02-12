@@ -16,7 +16,7 @@ def cancel_mirror(update, context):
         gid = args[1]
         dl = getDownloadByGid(gid)
         if not dl:
-            sendMessage(f"GID: <code>{gid}</code> Not Found.", context.bot, update)
+            sendMessage(f"GID: <code>{gid}</code> Not Found..idiot.🤪", context.bot, update)
             return
         mirror_message = dl.message
     elif update.message.reply_to_message:
@@ -33,7 +33,7 @@ def cancel_mirror(update, context):
             if BotCommands.MirrorCommand in mirror_message.text or \
                BotCommands.TarMirrorCommand in mirror_message.text or \
                BotCommands.UnzipMirrorCommand in mirror_message.text:
-                msg1 = "Mirror Already Have Been Cancelled"
+                msg1 = "Mirror Already Have Been Cancelled 🥳"
                 sendMessage(msg1, context.bot, update)
             else:
                 sendMessage(msg, context.bot, update)
@@ -66,7 +66,7 @@ def cancel_all(update, context):
                 sleep(0.3)
         else:
             break
-    sendMessage(f'{count} Download(s) has been Cancelled!', context.bot, update)
+    sendMessage(f'{count} Download(s) has been Cancelled..🤪!', context.bot, update)
 
 
 
