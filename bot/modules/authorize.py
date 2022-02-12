@@ -26,7 +26,7 @@ def authorize(update, context):
         # Trying to authorize a chat
         chat_id = update.effective_chat.id
         if chat_id in AUTHORIZED_CHATS:
-            msg = 'Chat Already Authorized'
+            msg = 'Chat Already Authorized ♨'
 
         elif DB_URI is not None:
             msg = DbManger().db_auth(chat_id)
@@ -34,7 +34,7 @@ def authorize(update, context):
             with open('authorized_chats.txt', 'a') as file:
                 file.write(f'{chat_id}\n')
                 AUTHORIZED_CHATS.add(chat_id)
-                msg = 'Chat Authorized'
+                msg = 'Chat Authorized 💮'
     else:
         # Trying to authorize someone by replying
         user_id = reply_message.from_user.id
