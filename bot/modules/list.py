@@ -10,7 +10,7 @@ def list_drive(update, context):
     try:
         search = update.message.text.split(' ', maxsplit=1)[1]
         LOGGER.info(f"Searching: {search}")
-        reply = sendMessage('Searching..🔱', context.bot, update)
+        reply = sendMessage('Searching..🕊🕊 Please Wait..!⚡⚡ ', context.bot, update)
         gdrive = GoogleDriveHelper()
         msg, button = gdrive.drive_list(search)
 
@@ -20,7 +20,7 @@ def list_drive(update, context):
             editMessage(f'No result found for <code>{search}</code>', reply, button)
 
     except IndexError:
-        sendMessage('Send a search key along with command', context.bot, update)
+        sendMessage('Send a search key along with command idiot..🤣', context.bot, update)
 
 
 list_handler = CommandHandler(BotCommands.ListCommand, list_drive, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
