@@ -192,7 +192,7 @@ class MirrorListener(listeners.MirrorListeners):
             uname = f"@{self.message.from_user.username}"
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-        msg = f"{uname} your download 🧐 has been knockout 😂 due to 👻: {error}"
+        msg = f"{uname} your download has been knockout 😴🤔: {error}"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -246,9 +246,9 @@ class MirrorListener(listeners.MirrorListeners):
         with download_dict_lock:
             msg = f'<b> 💐 Filename: </b><code>{download_dict[self.uid].name()}</code>\n<b>Size: </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
-                msg += '\n<b>💌 Type: </b><code>Folder</code>'
-                msg += f'\n<b> 🎊 SubFolders: </b><code>{folders}</code>'
-                msg += f'\n<b> 💸 Files : </b><code>{files}</code>'
+                msg += '\n<b>💌 Type: </b><code>Folder 📁</code>'
+                msg += f'\n<b>🎊 SubFolders: </b><code>{folders}</code>'
+                msg += f'\n<b>💸 Files : </b><code>{files}</code>'
             else:
                 msg += f'\n<b>💌 Type : </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
