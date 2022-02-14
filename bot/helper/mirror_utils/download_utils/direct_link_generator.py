@@ -59,6 +59,8 @@ def direct_link_generator(link: str):
         return fembed(link)
     elif 'asianclub.tv' in link:
         return fembed(link)
+    elif 'daftsex.com' in link:
+        return daftsex(link)
     elif 'mycloudzz.com' in link:
      return fembed(link)
     elif 'gaobook.review' in link:
@@ -251,6 +253,16 @@ def letsupload(url: str) -> str:
 
 
 def fembed(link: str) -> str:
+    """ Fembed direct link generator
+    Based on https://github.com/zevtyardt/lk21
+             https://github.com/SlamDevs/slam-mirrorbot """
+    bypasser = lk21.Bypass()
+    dl_url=bypasser.bypass_fembed(link)
+    count = len(dl_url)
+    lst_link = [dl_url[i] for i in dl_url]
+    return lst_link[count-1]
+
+def Daftsex(link: str) -> str:
     """ Fembed direct link generator
     Based on https://github.com/zevtyardt/lk21
              https://github.com/SlamDevs/slam-mirrorbot """
