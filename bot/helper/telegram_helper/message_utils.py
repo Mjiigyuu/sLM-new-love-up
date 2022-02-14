@@ -132,7 +132,7 @@ def sendStatusMessage(msg, bot):
                     uldl_bytes += float(speedy.split('M')[0]) * 1048576
         dlspeed = get_readable_file_size(dlspeed_bytes)
         ulspeed = get_readable_file_size(uldl_bytes)
-        progress += f"\n<b>💽 FREE 🌼:</b> <code>{free}</code> | <b>🧭 ONLINE ♊:</b> <code>{currentTime}</code>\n<b>⏬️-️Download 🔃 :</b> <code>{dlspeed}/s</code> 🔻 🔀 <b> ⏫️️- ️Upload 🔄 :</b> <code>{ulspeed}/s</code> 🔺\n"
+        progress += f"\n<b>📇 FREE 🔬:</b> <code>{free}</code> | <b>🧭 ONLINE ♊:</b> <code>{currentTime}</code>\n<b>⏬️ Downloading :</b> <code>{dlspeed}/s</code> 🔻 🔀 <b>⏫️️ Uploading :</b> <code>{ulspeed}/s</code> 🔺\n"
     with status_reply_dict_lock:
         if msg.message.chat.id in list(status_reply_dict.keys()):
             try:
